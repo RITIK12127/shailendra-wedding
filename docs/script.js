@@ -1,0 +1,14 @@
+const intro=document.getElementById('intro');
+document.getElementById('enter').addEventListener('click',()=>{intro.classList.add('hide');document.body.classList.add('entered');window.scrollTo({top:0,behavior:'smooth'});});
+// A few slow, subtle floating petals
+const petalLayer=document.getElementById('petals');
+function makePetal(){const p=document.createElement('span');p.className='petal';p.textContent=['✦','❀','·'][Math.floor(Math.random()*3)];p.style.left=Math.random()*100+'%';p.style.fontSize=(9+Math.random()*12)+'px';p.style.animationDuration=(12+Math.random()*12)+'s';petalLayer.appendChild(p);setTimeout(()=>p.remove(),25000)}
+for(let i=0;i<12;i++)setTimeout(makePetal,i*500);setInterval(makePetal,1500);
+// Scratch card: pointer movement erases the gold foil.
+const canvas=document.getElementById('scratch'),ctx=canvas.getContext('2d',{willReadFrequently:true}),card=document.getElementById('scratchCard'),hint=document.getElementById('scratchHint');let drawing=false,cleared=false;
+function setupScratch(){const r=card.getBoundingClientRect(),dpr=Math.max(1,window.devicePixelRatio||1);canvas.width=(r.width-18)*dpr;canvas.height=(r.height-18)*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);const w=r.width-18,h=r.height-18;const g=ctx.createLinearGradient(0,0,w,h);g.addColorStop(0,'#d6b778');g.addColorStop(.45,'#f0d9a4');g.addColorStop(1,'#b98d50');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);ctx.strokeStyle='rgba(255,248,222,.65)';ctx.lineWidth=1;for(let x=15;x<w;x+=22){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke()}ctx.strokeStyle='rgba(113,70,37,.28)';ctx.strokeRect(12,12,w-24,h-24);ctx.fillStyle='#75452f';ctx.textAlign='center';ctx.font='20px serif';ctx.fillText('✧  शुभ तिथि  ✧',w/2,h/2-12);ctx.font='12px serif';ctx.fillText('खुरचकर देखें',w/2,h/2+20);}
+setupScratch();window.addEventListener('resize',()=>{if(!cleared)setupScratch()});
+function point(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+function erase(e){if(!drawing||cleared)return;const p=point(e);ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(p.x,p.y,23,0,Math.PI*2);ctx.fill();hint.style.opacity='0';}
+canvas.addEventListener('pointerdown',e=>{drawing=true;canvas.setPointerCapture(e.pointerId);erase(e)});canvas.addEventListener('pointermove',erase);canvas.addEventListener('pointerup',()=>{drawing=false;checkProgress()});canvas.addEventListener('pointercancel',()=>drawing=false);
+function checkProgress(){if(cleared)return;const data=ctx.getImageData(0,0,canvas.width,canvas.height).data;let transparent=0;for(let i=3;i<data.length;i+=4)if(data[i]<30)transparent++;if(transparent/(data.length/4)>.48){cleared=true;canvas.style.transition='opacity 1s';canvas.style.opacity='0';hint.style.display='none';setTimeout(()=>canvas.remove(),1100)}}
