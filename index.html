@@ -255,7 +255,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
  function updateCountdown(){const ms=Math.max(0,weddingAt-Date.now());const v=[Math.floor(ms/86400000),Math.floor(ms/3600000)%24,Math.floor(ms/60000)%60,Math.floor(ms/1000)%60];nodes.forEach((n,i)=>n.textContent=String(v[i]).padStart(2,'0'));}
  updateCountdown();setInterval(updateCountdown,1000);
  document.getElementById('saveDate')?.addEventListener('click',()=>{
-   const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Shakya Family//Wedding Invitation//EN','BEGIN:VEVENT','UID:deepali-shailendra-20261126@shailendra-wedding','DTSTAMP:20261117T000000Z','DTSTART;TZID=Asia/Kolkata:20261126T130000','DTEND;TZID=Asia/Kolkata:20261126T220000','SUMMARY:दीपाली ♥ शैलेन्द्र - शुभ विवाह','LOCATION:निजात विलास\, कैंटोनमेंट रोड\, गणपति कॉलोनी\, विदिशा','DESCRIPTION:शाक्या परिवार के स्नेहिल आमंत्रण पर सादर आमंत्रित हैं।','END:VEVENT','END:VCALENDAR'].join('\r\n');
+   const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Shakya Family//Wedding Invitation//EN','BEGIN:VEVENT','UID:deepali-shailendra-20261126@shailendra-wedding','DTSTAMP:20261117T000000Z','DTSTART;VALUE=DATE:20261126','DTEND;VALUE=DATE:20261127','SUMMARY:दीपाली ♥ शैलेन्द्र - शुभ विवाह','LOCATION:निजात विलास\, कैंटोनमेंट रोड\, गणपति कॉलोनी\, विदिशा','DESCRIPTION:शाक्या परिवार के स्नेहिल आमंत्रण पर सादर आमंत्रित हैं।','END:VEVENT','END:VCALENDAR'].join('\r\n');
    const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Deepali-Shailendra-Wedding.ics';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
  });
  document.getElementById('shareInvite')?.addEventListener('click',async()=>{
