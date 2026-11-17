@@ -70,12 +70,49 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
 .petal{position:fixed;top:-28px;z-index:9;pointer-events:none;color:#b77b85;text-shadow:0 2px 3px #fff;animation:fall linear forwards}
 @keyframes fall{to{transform:translate3d(45px,110vh,0) rotate(460deg);opacity:0}}
 .music-btn{position:fixed;right:14px;bottom:14px;z-index:12;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold2);background:#852642;color:#fff4e8;font-size:20px;box-shadow:0 5px 16px #70203944}
+/* Extra cinematic details and interactive touches */
+#pageProgress{position:fixed;top:0;left:0;width:0;height:4px;z-index:100;background:linear-gradient(90deg,#c5a05a,#a52b4e,#e8c58d);box-shadow:0 0 12px #c5a05a88}
+.floating-nav{position:sticky;top:8px;z-index:15;display:flex;justify-content:center;gap:7px;flex-wrap:wrap;width:max-content;max-width:96%;margin:0 auto 10px;padding:7px;background:#fffaf0d9;border:1px solid #d9bd82;border-radius:40px;box-shadow:0 8px 24px #7b354218;backdrop-filter:blur(10px)}
+.floating-nav a{font-size:12px;padding:7px 13px;border-radius:30px;color:#794052;transition:background .25s,color .25s}
+.floating-nav a:hover,.floating-nav a:focus{background:#8e2949;color:#fff8ef;outline:none}
+.countdown-panel{max-width:700px;margin:0 auto 15px;padding:22px 16px 20px;background:linear-gradient(135deg,#fffaf7,#f8e1e7);border:1px solid #d0ad70;box-shadow:0 12px 34px #a653651b;text-align:center;position:relative;overflow:hidden}
+.countdown-panel:before,.countdown-panel:after{content:"✿";position:absolute;color:#c99c6b;font-size:44px;opacity:.45;animation:slowBloom 6s ease-in-out infinite alternate}
+.countdown-panel:before{left:12px;top:8px}.countdown-panel:after{right:12px;bottom:4px;animation-delay:1.5s}
+.countdown-panel h2{font:400 23px 'Yatra One','Tiro Devanagari Hindi',serif;color:#842b49;margin:4px 0 15px}
+.countdown-grid{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.countdown-grid .unit{min-width:68px;padding:10px 9px;background:#fffaf4;border:1px solid #d6b77e;border-radius:3px;box-shadow:inset 0 0 0 3px #c8a15c12}
+.countdown-grid b{display:block;font:600 29px 'Cormorant Garamond',serif;color:#8f2b4a;line-height:1.1}
+.countdown-grid small{font-size:11px;color:#886c59}
+.date-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:17px;position:relative;z-index:1}
+.date-actions button,.date-actions a{border:1px solid #d2ae70;background:#8e2949;color:#fff7ed;padding:10px 15px;font-size:13px;cursor:pointer;box-shadow:0 5px 14px #70203921}
+.date-actions .soft{background:#fffaf4;color:#83334c}
+.flower-button{display:inline-flex;align-items:center;gap:7px;border:1px solid #d6b77e;background:linear-gradient(135deg,#fffaf4,#f8e4e9);color:#8e2949;padding:10px 17px;cursor:pointer;box-shadow:0 6px 18px #70203914;transition:transform .25s}
+.flower-button:hover{transform:translateY(-3px)}
+.heart-divider{font-size:17px;letter-spacing:10px;color:#bd8b91;margin:20px auto}
+.bloom-flower{position:fixed;z-index:70;pointer-events:none;font-size:22px;animation:bloomFly 1.8s ease-out forwards;filter:drop-shadow(0 3px 4px #b76b8266)}
+@keyframes bloomFly{0%{transform:translate(0,0) scale(.3) rotate(0);opacity:0}15%{opacity:1}100%{transform:translate(var(--bx),var(--by)) scale(1.1) rotate(var(--br));opacity:0}}
+@keyframes slowBloom{from{transform:rotate(-12deg) scale(.8)}to{transform:rotate(18deg) scale(1.14)}}
+.music-btn.playing{animation:musicGlow 1.7s ease-in-out infinite}
+@keyframes musicGlow{50%{box-shadow:0 0 0 7px #a52b4e19,0 0 20px #c5a05a99;transform:scale(1.06)}}
+.hero video{filter:saturate(1.08) contrast(1.02)}
+.hero-frame{outline:1px solid #fff4d866;outline-offset:5px;animation:frameGlow 5s ease-in-out infinite}
+@keyframes frameGlow{50%{box-shadow:0 0 24px #fff4cf99,inset 0 0 14px #fff4cf66}}
+.section-head .eyebrow{display:inline-block;padding:5px 13px;border-top:1px solid #d2b177;border-bottom:1px solid #d2b177}
+.event{overflow:hidden}.event:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,#fff8 48%,transparent 70%);transform:translateX(-130%);transition:transform .9s}
+.event:hover:after{transform:translateX(130%)}
+@media(max-width:600px){.floating-nav{gap:2px;padding:5px}.floating-nav a{padding:6px 9px;font-size:11px}.countdown-panel{padding:20px 9px}.countdown-grid{gap:6px}.countdown-grid .unit{min-width:59px;padding:9px 6px}.countdown-grid b{font-size:25px}.date-actions button,.date-actions a{padding:9px 11px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.hero-frame,.countdown-panel:before,.countdown-panel:after,.event:after,.music-btn.playing{animation:none!important;transition:none!important}}
+
 @media(max-width:600px){.wrap{padding:8px 10px 40px}.hero{width:100%;max-height:calc(100svh - 20px);border-width:6px}.hero-copy{top:5.5%}.hero-title{font-size:30px}.hero-names{font-size:39px}.section{padding:36px 3px 42px}.paper-card{padding:23px 16px}.events{grid-template-columns:1fr;gap:11px}.event{padding:15px 12px}.section h2{font-size:25px}.lead{font-size:15px}.garland{font-size:22px;height:43px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<div id="pageProgress"></div>
 <div class="wrap">
+<nav class="floating-nav" aria-label="मुख्य नेविगेशन">
+  <a href="#date">शुभ दिन</a><a href="#invite">निमंत्रण</a><a href="#events">कार्यक्रम</a><a href="#venue">स्थान</a>
+</nav>
 <div class="garland" aria-hidden="true"><span>🌿 ✿ ❀ ✿ 🌿 ✧ 🌿 ✿ ❀ ✿ 🌿</span></div>
 <header class="hero-shell">
   <div class="hero">
@@ -101,7 +138,22 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
     </div>
   </div>
 </header>
-<section class="section scratch-section reveal" aria-label="Wedding date scratch card">
+<section class="section reveal" id="date">
+  <div class="countdown-panel">
+    <div class="eyebrow">COUNTING THE MOMENTS</div>
+    <h2>शुभ घड़ी आने में शेष</h2>
+    <div class="countdown-grid" id="liveCountdown">
+      <div class="unit"><b>--</b><small>दिन</small></div><div class="unit"><b>--</b><small>घंटे</small></div><div class="unit"><b>--</b><small>मिनट</small></div><div class="unit"><b>--</b><small>सेकंड</small></div>
+    </div>
+    <div class="date-actions">
+      <button type="button" id="saveDate">कैलेंडर में तारीख जोड़ें ♡</button>
+      <button type="button" class="soft" id="shareInvite">निमंत्रण साझा करें ↗</button>
+    </div>
+  </div>
+  <div class="heart-divider">♡ ✦ ♡ ✦ ♡</div>
+  <button class="flower-button" id="flowerBurst" type="button">हमारी ओर से फूलों की वर्षा ✿</button>
+</section>
+<section class="section scratch-section reveal" id="scratch" aria-label="Wedding date scratch card">
   <div class="section-head"><div class="eyebrow">A LITTLE SURPRISE FOR YOU</div><h2 class="display">शुभ दिन जानने के लिए खुरचें</h2><div class="ornament">✿ ✧ ✿</div></div>
   <div class="scratch-wrap">
     <div class="scratch-card" id="scratchCard">
@@ -117,11 +169,11 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
     <button class="scratch-action" id="revealDate" type="button">तारीख दिखाएँ ♡</button>
   </div>
 </section>
-<section class="section reveal">
+<section class="section reveal" id="invite">
   <div class="section-head"><div class="eyebrow">A HEARTFELT INVITATION</div><h2 class="display">सप्रेम निमंत्रण</h2><div class="ornament">✿ ❧ ✿</div></div>
   <div class="paper-card"><p class="lead">परमात्मा की असीम कृपा एवं बड़ों के शुभाशीष से हमारे परिवार में शुभ विवाह का मंगल अवसर आया है। इस पावन बेला में आपकी गरिमामयी उपस्थिति हमारे लिए हर्ष एवं सौभाग्य का विषय होगी।<br><br>कृपया पधारकर वर-वधू को अपना स्नेह एवं आशीर्वाद प्रदान करें।</p><div class="family display">शाक्या परिवार</div></div>
 </section>
-<section class="section reveal">
+<section class="section reveal" id="events">
   <div class="section-head"><div class="eyebrow">WEDDING FESTIVITIES</div><h2 class="display">शुभ कार्यक्रम</h2><div class="ornament">❀ ✧ ❀</div></div>
   <div class="events">
     <article class="event"><div class="symbol">🪔</div><time>24 NOVEMBER 2026 · मंगलवार</time><h3 class="display">श्री गणेश पूजन</h3><p>माता पूजन एवं तेलवा<br>समय : शाम 4 बजे से</p></article>
@@ -130,7 +182,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
     <article class="event"><div class="symbol">🌺</div><time>26 NOVEMBER 2026 · गुरुवार</time><h3 class="display">आशीर्वाद समारोह एवं प्रीतिभोज</h3><p>दोपहर 1 बजे से आपके आगमन तक</p></article>
   </div>
 </section>
-<section class="section reveal">
+<section class="section reveal" id="venue">
   <div class="section-head"><div class="eyebrow">THE WEDDING VENUE</div><h2 class="display">आपका स्वागत है</h2><div class="ornament">✿ ❧ ✿</div></div>
   <div class="venue"><div class="venue-inner"><div class="eyebrow">CELEBRATE WITH US</div><h3 class="display">शुभ विवाह स्थल</h3><div class="place display">निजात विलास</div><p>कैंटोनमेंट रोड, गणपति कॉलोनी,<br>गुड बाई पब्लिक हाई स्कूल के पास,<br>विदिशा (मध्य प्रदेश)</p><a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nijat+Vilas+Cantonment+Road+Ganpati+Colony+Vidisha">Google Maps पर रास्ता देखें ↗</a></div></div>
 </section>
@@ -193,6 +245,29 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
  revealBtn.addEventListener('click',showDate);
  if('ResizeObserver'in window){const ro=new ResizeObserver(()=>{if(!revealed)paintCover();});ro.observe(card);}else window.addEventListener('resize',()=>{if(!revealed)paintCover();});
  paintCover();
+})();
+
+
+/* Countdown, calendar export, share action and flower shower */
+(()=>{
+ const weddingAt=new Date('2026-11-26T13:00:00+05:30').getTime();
+ const nodes=[...document.querySelectorAll('#liveCountdown b')];
+ function updateCountdown(){const ms=Math.max(0,weddingAt-Date.now());const v=[Math.floor(ms/86400000),Math.floor(ms/3600000)%24,Math.floor(ms/60000)%60,Math.floor(ms/1000)%60];nodes.forEach((n,i)=>n.textContent=String(v[i]).padStart(2,'0'));}
+ updateCountdown();setInterval(updateCountdown,1000);
+ document.getElementById('saveDate')?.addEventListener('click',()=>{
+   const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Shakya Family//Wedding Invitation//EN','BEGIN:VEVENT','UID:deepali-shailendra-20261126@shailendra-wedding','DTSTAMP:20261117T000000Z','DTSTART;TZID=Asia/Kolkata:20261126T130000','DTEND;TZID=Asia/Kolkata:20261126T220000','SUMMARY:दीपाली ♥ शैलेन्द्र - शुभ विवाह','LOCATION:निजात विलास\, कैंटोनमेंट रोड\, गणपति कॉलोनी\, विदिशा','DESCRIPTION:शाक्या परिवार के स्नेहिल आमंत्रण पर सादर आमंत्रित हैं।','END:VEVENT','END:VCALENDAR'].join('\r\n');
+   const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Deepali-Shailendra-Wedding.ics';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+ });
+ document.getElementById('shareInvite')?.addEventListener('click',async()=>{
+   const data={title:'दीपाली ♥ शैलेन्द्र | शुभ विवाह',text:'शाक्या परिवार की ओर से सादर आमंत्रण। 26 नवम्बर 2026, विदिशा।',url:location.href};
+   try{if(navigator.share)await navigator.share(data);else if(navigator.clipboard){await navigator.clipboard.writeText(location.href);alert('निमंत्रण लिंक कॉपी हो गया है।');}else{prompt('निमंत्रण लिंक कॉपी करें:',location.href);}}catch(e){}
+ });
+ document.getElementById('flowerBurst')?.addEventListener('click',()=>{
+   const symbols=['🌸','🌺','🌷','✿','❀','💗','✧'];const colors=['#b52f54','#bd8b91','#c7a15d','#6f8a62'];
+   const cx=innerWidth/2,cy=innerHeight*.48;
+   for(let i=0;i<48;i++){const el=document.createElement('span');el.className='bloom-flower';el.textContent=symbols[i%symbols.length];el.style.left=cx+'px';el.style.top=cy+'px';el.style.color=colors[i%colors.length];const a=Math.PI*2*i/48,dist=100+Math.random()*220;el.style.setProperty('--bx',Math.cos(a)*dist+'px');el.style.setProperty('--by',Math.sin(a)*dist+'px');el.style.setProperty('--br',(Math.random()*320-160)+'deg');document.body.appendChild(el);setTimeout(()=>el.remove(),1900);}
+ });
+ const progress=document.getElementById('pageProgress');addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';},{passive:true});
 })();
 
 const video=document.getElementById('weddingVideo');
