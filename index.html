@@ -60,13 +60,6 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
 .event time{position:relative;z-index:1;font-size:12px}
 .event h3{position:relative;z-index:1;font-size:18px}
 .event p{position:relative;z-index:1;min-height:43px}
-.event-scratch{position:absolute;inset:0;z-index:5;display:grid;place-items:center;background:linear-gradient(135deg,#f6e8c4,#caa45f 28%,#f9efcf 52%,#b98d4d 78%,#f7e8c1);cursor:crosshair}
-.event-scratch:before{content:"";position:absolute;inset:8px;border:1px solid #fff5d9;pointer-events:none}
-.event-scratch:after{content:"";position:absolute;inset:13px;border:1px dashed #9b743c88;pointer-events:none}
-.event-scratch span{position:absolute;z-index:1;color:#765329;font:600 12px 'Cormorant Garamond',serif;letter-spacing:1.6px;text-shadow:0 1px #fff9;pointer-events:none}
-.event-scratch-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:2;touch-action:none}
-.event-scratch.cleared{opacity:0;visibility:hidden;transition:opacity .65s,visibility .65s}
-.event-scratch-note{margin:17px auto 0;color:#8d6d59;font-size:13px;letter-spacing:.3px}
 @keyframes artFloat{0%,100%{transform:translateY(1px) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
 @keyframes haloPulse{0%,100%{transform:scale(.94);opacity:.7}50%{transform:scale(1.08);opacity:1}}
 @keyframes sparkTwinkle{0%,100%{opacity:.25;transform:scale(.7) rotate(0)}50%{opacity:1;transform:scale(1.25) rotate(40deg)}}
@@ -169,25 +162,20 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
     <article class="event event-one">
       <div class="event-art art-diya" aria-hidden="true"><span class="art-halo"></span><span class="art-spark s1">✦</span><span class="art-spark s2">✧</span><span class="art-main">🪔</span><span class="art-base"></span></div>
       <time>24 NOVEMBER 2026 · मंगलवार</time><h3 class="display">श्री गणेश पूजन</h3><p>माता पूजन एवं तेलवा<br>समय : शाम 4 बजे से</p>
-      <div class="event-scratch"><span>✧ स्क्रैच करके देखें ✧</span><canvas class="event-scratch-canvas" aria-label="कार्यक्रम देखने के लिए स्क्रैच करें"></canvas></div>
     </article>
     <article class="event event-two">
       <div class="event-art art-mandap" aria-hidden="true"><span class="art-halo"></span><span class="art-spark s1">✦</span><span class="art-spark s2">✧</span><span class="art-main">🌸</span><span class="art-garland">❀ ❀ ❀</span></div>
       <time>25 NOVEMBER 2026 · बुधवार</time><h3 class="display">मण्डपाच्छादन</h3><p>मिति अगहन कृष्ण पक्ष 1</p>
-      <div class="event-scratch"><span>✧ स्क्रैच करके देखें ✧</span><canvas class="event-scratch-canvas" aria-label="कार्यक्रम देखने के लिए स्क्रैच करें"></canvas></div>
     </article>
     <article class="event event-three">
       <div class="event-art art-baraat" aria-hidden="true"><span class="art-halo"></span><span class="art-spark s1">✦</span><span class="art-spark s2">✧</span><span class="art-main">🐎</span><span class="art-confetti">✦ · ✧ · ✦</span></div>
       <time>26 NOVEMBER 2026 · गुरुवार</time><h3 class="display">बारात आगमन एवं पाणिग्रहण संस्कार</h3><p>मिति अगहन कृष्ण पक्ष 2</p>
-      <div class="event-scratch"><span>✧ स्क्रैच करके देखें ✧</span><canvas class="event-scratch-canvas" aria-label="कार्यक्रम देखने के लिए स्क्रैच करें"></canvas></div>
     </article>
     <article class="event event-four">
       <div class="event-art art-feast" aria-hidden="true"><span class="art-halo"></span><span class="art-spark s1">✦</span><span class="art-spark s2">✧</span><span class="art-main">🍽️</span><span class="art-confetti">❀ · ✧ · ❀</span></div>
       <time>26 NOVEMBER 2026 · गुरुवार</time><h3 class="display">आशीर्वाद समारोह एवं प्रीतिभोज</h3><p>दोपहर 1 बजे से आपके आगमन तक</p>
-      <div class="event-scratch"><span>✧ स्क्रैच करके देखें ✧</span><canvas class="event-scratch-canvas" aria-label="कार्यक्रम देखने के लिए स्क्रैच करें"></canvas></div>
     </article>
   </div>
-  <p class="event-scratch-note">हर सुनहरे कार्ड को उंगली से स्क्रैच करके कार्यक्रम खोलें ✨</p>
 </section>
 <section class="section reveal">
   <div class="section-head"><div class="eyebrow">THE WEDDING VENUE</div><h2 class="display">आपका स्वागत है</h2><div class="ornament">✿ ❧ ✿</div></div>
@@ -218,48 +206,6 @@ if('IntersectionObserver'in window){const obs=new IntersectionObserver(entries=>
 const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduce){const flowers=['✿','❀','✧','❁'];setInterval(()=>{const p=document.createElement('span');p.className='petal';p.textContent=flowers[Math.floor(Math.random()*flowers.length)];p.style.left=Math.random()*100+'vw';p.style.fontSize=(11+Math.random()*15)+'px';p.style.animationDuration=(8+Math.random()*6)+'s';document.body.appendChild(p);setTimeout(()=>p.remove(),15000)},780);}
 
-
-/* Four independent scratch-to-reveal function cards */
-document.querySelectorAll('.event-scratch').forEach(cover=>{
-  const canvas=cover.querySelector('canvas');
-  if(!canvas)return;
-  const ctx=canvas.getContext('2d',{willReadFrequently:true});
-  let drawing=false,done=false;
-  function resetCover(){
-    if(done)return;
-    const box=cover.getBoundingClientRect();
-    const ratio=Math.min(window.devicePixelRatio||1,2);
-    canvas.width=Math.max(1,Math.round(box.width*ratio));
-    canvas.height=Math.max(1,Math.round(box.height*ratio));
-    ctx.setTransform(ratio,0,0,ratio,0,0);
-    const g=ctx.createLinearGradient(0,0,box.width,box.height);
-    g.addColorStop(0,'#f5e5bd');g.addColorStop(.3,'#c49a56');g.addColorStop(.53,'#fff2ce');g.addColorStop(.78,'#c49a56');g.addColorStop(1,'#f7e9c7');
-    ctx.globalCompositeOperation='source-over';ctx.fillStyle=g;ctx.fillRect(0,0,box.width,box.height);
-    ctx.globalAlpha=.24;ctx.strokeStyle='#fffdf2';ctx.lineWidth=1;
-    for(let x=-box.height;x<box.width;x+=14){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x+box.height,box.height);ctx.stroke();}
-    ctx.globalAlpha=1;
-  }
-  function rub(e){
-    if(done)return;
-    const r=canvas.getBoundingClientRect();
-    const x=e.clientX-r.left,y=e.clientY-r.top;
-    ctx.globalCompositeOperation='destination-out';
-    ctx.beginPath();ctx.arc(x,y,22,0,Math.PI*2);ctx.fill();
-  }
-  function assess(){
-    if(done)return;
-    const pixels=ctx.getImageData(0,0,canvas.width,canvas.height).data;
-    let erased=0,sampled=0;
-    for(let i=3;i<pixels.length;i+=96){sampled++;if(pixels[i]<100)erased++;}
-    if(sampled&&erased/sampled>.32){done=true;cover.classList.add('cleared');}
-  }
-  canvas.addEventListener('pointerdown',e=>{if(done)return;drawing=true;canvas.setPointerCapture(e.pointerId);rub(e);e.preventDefault();});
-  canvas.addEventListener('pointermove',e=>{if(!drawing||done)return;rub(e);e.preventDefault();});
-  canvas.addEventListener('pointerup',()=>{if(!drawing)return;drawing=false;assess();});
-  canvas.addEventListener('pointercancel',()=>{drawing=false;});
-  resetCover();
-  window.addEventListener('resize',resetCover);
-});
 
 const scratchCard=document.getElementById('scratchCard');
 const scratchCanvas=document.getElementById('scratchCanvas');
