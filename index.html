@@ -27,11 +27,28 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
 .hero-note{font-size:clamp(11px,2.8vw,14px);line-height:1.7;color:#64474a;margin:7px auto 0}
 .hero-date{display:inline-block;margin-top:10px;padding:6px 15px;border-top:1px solid #ba9254;border-bottom:1px solid #ba9254;background:#fff8f0c9;color:#743148;font:600 12px 'Cormorant Garamond',serif;letter-spacing:1.5px}
 .hero-hindi-date{font-size:12px;color:#6c4d47;margin-top:4px}
-.gate{position:absolute;z-index:6;inset:0;display:grid;place-items:center;background:#fff0f3d9;backdrop-filter:blur(3px);transition:opacity .9s,visibility .9s}
+.gate{position:fixed;z-index:60;inset:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at center,#fffaf5eF 0%,#f8dfe6f2 58%,#e9c0cbf5 100%);backdrop-filter:blur(5px);transition:opacity 1.55s ease,visibility 1.55s ease}
+.gate:before,.gate:after{content:"";position:absolute;top:0;bottom:0;width:50.5%;z-index:1;pointer-events:none;background:linear-gradient(145deg,#fff8f0 0%,#f4dce2 48%,#eac6d0 100%);box-shadow:inset 0 0 0 8px #fffaf066,inset 0 0 0 10px #c5a05a,inset 0 0 50px #a52b4e12;transition:transform 1.5s cubic-bezier(.72,0,.18,1)}
+.gate:before{left:0;border-right:3px double #c5a05a;background-image:radial-gradient(circle at 50% 50%,#fff6 0 2px,transparent 3px),linear-gradient(145deg,#fff8f0 0%,#f4dce2 48%,#eac6d0 100%);background-size:42px 42px,auto}
+.gate:after{right:0;border-left:3px double #c5a05a;background-image:radial-gradient(circle at 50% 50%,#fff6 0 2px,transparent 3px),linear-gradient(215deg,#fff8f0 0%,#f4dce2 48%,#eac6d0 100%);background-size:42px 42px,auto}
 .gate.hide{opacity:0;visibility:hidden;pointer-events:none}
-.gate-card{width:82%;max-width:360px;padding:22px 14px;text-align:center;background:#fff9f4eF;border:1px solid var(--gold);outline:4px double #c6a15c55;outline-offset:5px;box-shadow:0 12px 35px #86354c22}
-.gate-card .namaste{font-size:27px;color:var(--rose)}.gate-card h1{font-size:30px;margin:6px 0;color:var(--deep);font-weight:400}.gate-card p{font-size:13px;line-height:1.9;margin:6px 0 13px;color:#765a55}
-.enter{border:1px solid #e8d19b;background:linear-gradient(135deg,#9e2b4c,#6c1e37);color:#fff8ed;padding:11px 22px;box-shadow:0 7px 17px #70203930;cursor:pointer;letter-spacing:.6px}
+.gate.hide:before{transform:translateX(-105%)}
+.gate.hide:after{transform:translateX(105%)}
+.gate-card{position:relative;z-index:3;width:min(84vw,410px);padding:30px 20px 24px;text-align:center;background:linear-gradient(145deg,#fffdf9f5,#fff1f3f5);border:1px solid var(--gold);outline:5px double #c6a15c77;outline-offset:7px;box-shadow:0 18px 55px #86354c30;animation:gateCardEnter 1.1s cubic-bezier(.2,.75,.2,1) both}
+.gate-card:before,.gate-card:after{content:"❧";position:absolute;color:#b88b58;font-size:28px;top:8px}
+.gate-card:before{left:12px}.gate-card:after{right:12px;transform:scaleX(-1)}
+.gate-top{font-size:21px;letter-spacing:8px;color:#b88b58;margin-bottom:6px}
+.gate-card .namaste{font-size:30px;color:var(--rose);margin-bottom:5px}
+.gate-card .gate-names{font:400 clamp(25px,6vw,34px) 'Yatra One','Tiro Devanagari Hindi',serif;color:#922b4b;margin:7px 0}
+.gate-card .gate-names em{font-style:normal;color:#c5a05a;font-size:.75em}
+.gate-date{display:inline-block;border-top:1px solid #c5a05a;border-bottom:1px solid #c5a05a;padding:6px 12px;margin:8px 0;color:#835442;font:600 12px 'Cormorant Garamond',serif;letter-spacing:2px}
+.gate-foot{font:italic 14px 'Cormorant Garamond',serif;color:#98746b;margin-top:13px}
+.gate-card h1{font-size:31px;margin:6px 0;color:var(--deep);font-weight:400}
+.gate-card p{font-size:14px;line-height:1.95;margin:8px 0 10px;color:#765a55}
+.enter{position:relative;z-index:4;border:1px solid #e8d19b;background:linear-gradient(135deg,#9e2b4c,#6c1e37);color:#fff8ed;padding:12px 24px;box-shadow:0 8px 20px #70203940;cursor:pointer;letter-spacing:.6px;transition:transform .25s,box-shadow .25s}
+.enter:hover{transform:translateY(-3px);box-shadow:0 12px 25px #70203955}
+@keyframes gateCardEnter{from{opacity:0;transform:translateY(25px) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:600px){.gate-card{padding:25px 16px 20px;width:min(84vw,370px)}.gate-card .namaste{font-size:26px}.gate-card h1{font-size:27px}.gate-card p{font-size:13px}.gate-top{font-size:17px}}
 .ornament{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--gold);margin:15px auto}.ornament:before,.ornament:after{content:"";width:58px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.ornament:after{transform:rotate(180deg)}
 .section{position:relative;text-align:center;padding:45px 8px 52px}.section:before{content:"❀";position:absolute;top:9px;left:5%;font-size:26px;color:#bd8b91;opacity:.65}.section:after{content:"❀";position:absolute;top:9px;right:5%;font-size:26px;color:#bd8b91;opacity:.65}
 .section-head{margin-bottom:22px}.section h2{font-size:29px;color:var(--deep);margin:6px 0 0;font-weight:400}.lead{font-size:16px;line-height:2.2;color:#654b4b;max-width:650px;margin:0 auto}
@@ -129,11 +146,15 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
     </div>
     <div class="gate" id="gate">
       <div class="gate-card">
+        <div class="gate-top">❀ ✦ ❀</div>
         <div class="namaste">॥ श्री गणेशाय नमः ॥</div>
-        <div class="eyebrow">WITH LOVE & BLESSINGS</div>
+        <div class="eyebrow">A ROYAL WEDDING INVITATION</div>
         <h1 class="display">शुभ विवाह</h1>
-        <p>दीपाली एवं शैलेन्द्र के मंगल परिणय में<br>आपका हार्दिक स्वागत है।</p>
-        <button class="enter" id="enter">संगीत सहित आमंत्रण खोलें ✿</button>
+        <div class="gate-names">दीपाली <em>♥</em> शैलेन्द्र</div>
+        <p>शाक्या परिवार के स्नेहिल आमंत्रण पर<br>आपका सपरिवार हार्दिक स्वागत है।</p>
+        <div class="gate-date">THURSDAY · 26 NOVEMBER 2026</div><br>
+        <button class="enter" id="enter">आमंत्रण खोलें · संगीत सुनें ✿</button>
+        <div class="gate-foot">Tap to open your invitation</div>
       </div>
     </div>
   </div>
