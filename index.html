@@ -41,6 +41,43 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
 .events{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:760px;margin:auto}
 .event{background:linear-gradient(145deg,#fffdf8,#fff0f2);border:1px solid #d6b77e;box-shadow:0 7px 20px #a6536515;padding:18px 14px;position:relative;text-align:center;transition:transform .35s,box-shadow .35s}
 .event:hover{transform:translateY(-4px);box-shadow:0 13px 24px #a6536524}.event .symbol{color:#b68e4c;font-size:23px}.event time{display:block;color:#9b6f58;font:600 13px 'Cormorant Garamond',serif;letter-spacing:1.2px;margin:5px 0}.event h3{font-size:18px;line-height:1.6;color:#85334c;font-weight:400;margin:4px 0}.event p{font-size:13px;line-height:1.8;color:#745b54;margin:0}
+
+/* Animated miniature scratch invitations for each wedding function */
+.event{overflow:hidden;min-height:270px;padding:15px 14px 18px;border-radius:5px;background:linear-gradient(145deg,#fffdf8,#fff0f2);transition:transform .45s,box-shadow .45s}
+.event:before{content:"";position:absolute;inset:5px;border:1px solid #d9bd89;pointer-events:none;opacity:.75}
+.event:hover{transform:translateY(-6px) scale(1.012);box-shadow:0 16px 28px #a6536530}
+.event-art{height:76px;width:100%;position:relative;display:grid;place-items:center;margin:0 auto 5px;overflow:hidden}
+.art-halo{position:absolute;width:66px;height:66px;border:1px solid #d5b574;border-radius:50%;background:radial-gradient(circle,#fff7e2 0%,#f5dce1 68%,transparent 70%);animation:haloPulse 3.2s ease-in-out infinite}
+.art-main{position:relative;z-index:2;font-size:39px;filter:drop-shadow(0 4px 5px #8a4a3730);animation:artFloat 2.8s ease-in-out infinite}
+.art-spark{position:absolute;color:#b98c4c;font-size:17px;animation:sparkTwinkle 2s ease-in-out infinite}
+.art-spark.s1{left:calc(50% - 47px);top:9px}.art-spark.s2{right:calc(50% - 48px);bottom:8px;animation-delay:.8s}
+.art-base{position:absolute;bottom:5px;width:55px;height:7px;border-radius:50%;background:#c59b5b55;filter:blur(3px)}
+.art-garland,.art-confetti{position:absolute;bottom:3px;color:#b98c4c;font-size:13px;letter-spacing:5px;animation:garlandSway 3s ease-in-out infinite}
+.art-confetti{top:5px;bottom:auto;animation:confettiFloat 4s ease-in-out infinite}
+.event-two .art-main{animation:flowerTurn 8s linear infinite}
+.event-three .art-main{animation:horseStep 1.7s ease-in-out infinite}
+.event-four .art-main{animation:feastBob 2.3s ease-in-out infinite}
+.event time{position:relative;z-index:1;font-size:12px}
+.event h3{position:relative;z-index:1;font-size:18px}
+.event p{position:relative;z-index:1;min-height:43px}
+.event-scratch{position:absolute;inset:0;z-index:5;display:grid;place-items:center;background:linear-gradient(135deg,#f6e8c4,#caa45f 28%,#f9efcf 52%,#b98d4d 78%,#f7e8c1);cursor:crosshair}
+.event-scratch:before{content:"";position:absolute;inset:8px;border:1px solid #fff5d9;pointer-events:none}
+.event-scratch:after{content:"";position:absolute;inset:13px;border:1px dashed #9b743c88;pointer-events:none}
+.event-scratch span{position:absolute;z-index:1;color:#765329;font:600 12px 'Cormorant Garamond',serif;letter-spacing:1.6px;text-shadow:0 1px #fff9;pointer-events:none}
+.event-scratch-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:2;touch-action:none}
+.event-scratch.cleared{opacity:0;visibility:hidden;transition:opacity .65s,visibility .65s}
+.event-scratch-note{margin:17px auto 0;color:#8d6d59;font-size:13px;letter-spacing:.3px}
+@keyframes artFloat{0%,100%{transform:translateY(1px) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
+@keyframes haloPulse{0%,100%{transform:scale(.94);opacity:.7}50%{transform:scale(1.08);opacity:1}}
+@keyframes sparkTwinkle{0%,100%{opacity:.25;transform:scale(.7) rotate(0)}50%{opacity:1;transform:scale(1.25) rotate(40deg)}}
+@keyframes garlandSway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@keyframes flowerTurn{to{transform:rotate(360deg)}}
+@keyframes horseStep{0%,100%{transform:translateY(1px) rotate(-4deg)}50%{transform:translateY(-5px) rotate(4deg)}}
+@keyframes feastBob{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.06)}}
+@keyframes confettiFloat{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(7px);opacity:1}}
+@media(max-width:600px){.event{min-height:250px}.event-art{height:70px}}
+@media(prefers-reduced-motion:reduce){.event-art *{animation:none!important}}
+
 .venue{max-width:700px;margin:auto;padding:30px 18px;background:linear-gradient(145deg,#f9e4e8,#fff8f0);border:1px solid #c5a05a;box-shadow:0 12px 30px #a653651c;position:relative}.venue:before{content:"";position:absolute;inset:8px;border:1px dashed #c5a05a;pointer-events:none}.venue-inner{position:relative}.venue h3{font-size:28px;color:#8b2c49;font-weight:400;margin:8px}.venue p{line-height:2;color:#62494a}.venue .place{font-size:25px;color:#9b3150;margin:8px}
 .map-btn{display:inline-block;margin-top:10px;padding:11px 22px;background:#8e2949;color:#fff5e9;border:1px solid #d6b77e;box-shadow:0 5px 15px #70203922}
 .closing{padding:33px 10px 60px;text-align:center;color:#6f5351}.closing .couple{font-size:35px;color:#96314e}.closing p{line-height:2}
@@ -129,11 +166,28 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
 <section class="section reveal">
   <div class="section-head"><div class="eyebrow">WEDDING FESTIVITIES</div><h2 class="display">शुभ कार्यक्रम</h2><div class="ornament">❀ ✧ ❀</div></div>
   <div class="events">
-    <article class="event"><div class="symbol">🪔</div><time>24 NOVEMBER 2026 · मंगलवार</time><h3 class="display">श्री गणेश पूजन</h3><p>माता पूजन एवं तेलवा<br>समय : शाम 4 बजे से</p></article>
-    <article class="event"><div class="symbol">🌸</div><time>25 NOVEMBER 2026 · बुधवार</time><h3 class="display">मण्डपाच्छादन</h3><p>मिति अगहन कृष्ण पक्ष 1</p></article>
-    <article class="event"><div class="symbol">💐</div><time>26 NOVEMBER 2026 · गुरुवार</time><h3 class="display">बारात आगमन एवं पाणिग्रहण संस्कार</h3><p>मिति अगहन कृष्ण पक्ष 2</p></article>
-    <article class="event"><div class="symbol">🌺</div><time>26 NOVEMBER 2026 · गुरुवार</time><h3 class="display">आशीर्वाद समारोह एवं प्रीतिभोज</h3><p>दोपहर 1 बजे से आपके आगमन तक</p></article>
+    <article class="event event-one">
+      <div class="event-art art-diya" aria-hidden="true"><span class="art-halo"></span><span class="art-spark s1">✦</span><span class="art-spark s2">✧</span><span class="art-main">🪔</span><span class="art-base"></span></div>
+      <time>24 NOVEMBER 2026 · मंगलवार</time><h3 class="display">श्री गणेश पूजन</h3><p>माता पूजन एवं तेलवा<br>समय : शाम 4 बजे से</p>
+      <div class="event-scratch"><span>✧ स्क्रैच करके देखें ✧</span><canvas class="event-scratch-canvas" aria-label="कार्यक्रम देखने के लिए स्क्रैच करें"></canvas></div>
+    </article>
+    <article class="event event-two">
+      <div class="event-art art-mandap" aria-hidden="true"><span class="art-halo"></span><span class="art-spark s1">✦</span><span class="art-spark s2">✧</span><span class="art-main">🌸</span><span class="art-garland">❀ ❀ ❀</span></div>
+      <time>25 NOVEMBER 2026 · बुधवार</time><h3 class="display">मण्डपाच्छादन</h3><p>मिति अगहन कृष्ण पक्ष 1</p>
+      <div class="event-scratch"><span>✧ स्क्रैच करके देखें ✧</span><canvas class="event-scratch-canvas" aria-label="कार्यक्रम देखने के लिए स्क्रैच करें"></canvas></div>
+    </article>
+    <article class="event event-three">
+      <div class="event-art art-baraat" aria-hidden="true"><span class="art-halo"></span><span class="art-spark s1">✦</span><span class="art-spark s2">✧</span><span class="art-main">🐎</span><span class="art-confetti">✦ · ✧ · ✦</span></div>
+      <time>26 NOVEMBER 2026 · गुरुवार</time><h3 class="display">बारात आगमन एवं पाणिग्रहण संस्कार</h3><p>मिति अगहन कृष्ण पक्ष 2</p>
+      <div class="event-scratch"><span>✧ स्क्रैच करके देखें ✧</span><canvas class="event-scratch-canvas" aria-label="कार्यक्रम देखने के लिए स्क्रैच करें"></canvas></div>
+    </article>
+    <article class="event event-four">
+      <div class="event-art art-feast" aria-hidden="true"><span class="art-halo"></span><span class="art-spark s1">✦</span><span class="art-spark s2">✧</span><span class="art-main">🍽️</span><span class="art-confetti">❀ · ✧ · ❀</span></div>
+      <time>26 NOVEMBER 2026 · गुरुवार</time><h3 class="display">आशीर्वाद समारोह एवं प्रीतिभोज</h3><p>दोपहर 1 बजे से आपके आगमन तक</p>
+      <div class="event-scratch"><span>✧ स्क्रैच करके देखें ✧</span><canvas class="event-scratch-canvas" aria-label="कार्यक्रम देखने के लिए स्क्रैच करें"></canvas></div>
+    </article>
   </div>
+  <p class="event-scratch-note">हर सुनहरे कार्ड को उंगली से स्क्रैच करके कार्यक्रम खोलें ✨</p>
 </section>
 <section class="section reveal">
   <div class="section-head"><div class="eyebrow">THE WEDDING VENUE</div><h2 class="display">आपका स्वागत है</h2><div class="ornament">✿ ❧ ✿</div></div>
@@ -163,6 +217,49 @@ musicBtn.addEventListener('click',async()=>{
 if('IntersectionObserver'in window){const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));}
 const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduce){const flowers=['✿','❀','✧','❁'];setInterval(()=>{const p=document.createElement('span');p.className='petal';p.textContent=flowers[Math.floor(Math.random()*flowers.length)];p.style.left=Math.random()*100+'vw';p.style.fontSize=(11+Math.random()*15)+'px';p.style.animationDuration=(8+Math.random()*6)+'s';document.body.appendChild(p);setTimeout(()=>p.remove(),15000)},780);}
+
+
+/* Four independent scratch-to-reveal function cards */
+document.querySelectorAll('.event-scratch').forEach(cover=>{
+  const canvas=cover.querySelector('canvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d',{willReadFrequently:true});
+  let drawing=false,done=false;
+  function resetCover(){
+    if(done)return;
+    const box=cover.getBoundingClientRect();
+    const ratio=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=Math.max(1,Math.round(box.width*ratio));
+    canvas.height=Math.max(1,Math.round(box.height*ratio));
+    ctx.setTransform(ratio,0,0,ratio,0,0);
+    const g=ctx.createLinearGradient(0,0,box.width,box.height);
+    g.addColorStop(0,'#f5e5bd');g.addColorStop(.3,'#c49a56');g.addColorStop(.53,'#fff2ce');g.addColorStop(.78,'#c49a56');g.addColorStop(1,'#f7e9c7');
+    ctx.globalCompositeOperation='source-over';ctx.fillStyle=g;ctx.fillRect(0,0,box.width,box.height);
+    ctx.globalAlpha=.24;ctx.strokeStyle='#fffdf2';ctx.lineWidth=1;
+    for(let x=-box.height;x<box.width;x+=14){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x+box.height,box.height);ctx.stroke();}
+    ctx.globalAlpha=1;
+  }
+  function rub(e){
+    if(done)return;
+    const r=canvas.getBoundingClientRect();
+    const x=e.clientX-r.left,y=e.clientY-r.top;
+    ctx.globalCompositeOperation='destination-out';
+    ctx.beginPath();ctx.arc(x,y,22,0,Math.PI*2);ctx.fill();
+  }
+  function assess(){
+    if(done)return;
+    const pixels=ctx.getImageData(0,0,canvas.width,canvas.height).data;
+    let erased=0,sampled=0;
+    for(let i=3;i<pixels.length;i+=96){sampled++;if(pixels[i]<100)erased++;}
+    if(sampled&&erased/sampled>.32){done=true;cover.classList.add('cleared');}
+  }
+  canvas.addEventListener('pointerdown',e=>{if(done)return;drawing=true;canvas.setPointerCapture(e.pointerId);rub(e);e.preventDefault();});
+  canvas.addEventListener('pointermove',e=>{if(!drawing||done)return;rub(e);e.preventDefault();});
+  canvas.addEventListener('pointerup',()=>{if(!drawing)return;drawing=false;assess();});
+  canvas.addEventListener('pointercancel',()=>{drawing=false;});
+  resetCover();
+  window.addEventListener('resize',resetCover);
+});
 
 const scratchCard=document.getElementById('scratchCard');
 const scratchCanvas=document.getElementById('scratchCanvas');
