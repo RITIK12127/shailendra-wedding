@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#fff0f3"><title>दीपाली ♥ शैलेन्द्र | शुभ विवाह</title>
+<meta name="theme-color" content="#fff0f3"><title>शैलेन्द्र ♥ दीपाली | शुभ विवाह</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Yatra+One&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 <style>
@@ -29,10 +29,8 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
 .hero-hindi-date{font-size:12px;color:#6c4d47;margin-top:4px}
 .gate{position:absolute;z-index:6;inset:0;display:grid;place-items:center;background:#fff0f3d9;backdrop-filter:blur(3px);transition:opacity .9s,visibility .9s}
 .gate.hide{opacity:0;visibility:hidden;pointer-events:none}
-.gate-card{width:82%;max-width:360px;padding:22px 14px;text-align:center;background:#fff9f4ef;border:1px solid var(--gold);outline:4px double #c6a15c55;outline-offset:5px;box-shadow:0 12px 35px #86354c22}
-.gate-card .namaste{font-size:27px;color:var(--rose)}
-.gate-card h1{font-size:30px;margin:6px 0;color:var(--deep);font-weight:400}
-.gate-card p{font-size:13px;line-height:1.9;margin:6px 0 13px;color:#765a55}
+.gate-card{width:82%;max-width:360px;padding:22px 14px;text-align:center;background:#fff9f4eF;border:1px solid var(--gold);outline:4px double #c6a15c55;outline-offset:5px;box-shadow:0 12px 35px #86354c22}
+.gate-card .namaste{font-size:27px;color:var(--rose)}.gate-card h1{font-size:30px;margin:6px 0;color:var(--deep);font-weight:400}.gate-card p{font-size:13px;line-height:1.9;margin:6px 0 13px;color:#765a55}
 .enter{border:1px solid #e8d19b;background:linear-gradient(135deg,#9e2b4c,#6c1e37);color:#fff8ed;padding:11px 22px;box-shadow:0 7px 17px #70203930;cursor:pointer;letter-spacing:.6px}
 .ornament{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--gold);margin:15px auto}.ornament:before,.ornament:after{content:"";width:58px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.ornament:after{transform:rotate(180deg)}
 .section{position:relative;text-align:center;padding:45px 8px 52px}.section:before{content:"❀";position:absolute;top:9px;left:5%;font-size:26px;color:#bd8b91;opacity:.65}.section:after{content:"❀";position:absolute;top:9px;right:5%;font-size:26px;color:#bd8b91;opacity:.65}
@@ -40,28 +38,6 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
 .paper-card{max-width:710px;margin:auto;padding:27px 22px;background:linear-gradient(145deg,#fffdf9,#fff4f4);border:1px solid #d6b77e;outline:1px solid #d6b77e55;outline-offset:-7px;box-shadow:0 12px 30px #a6536520;position:relative}
 .paper-card:before,.paper-card:after{content:"✿";position:absolute;color:#b57e7b;font-size:19px}.paper-card:before{top:10px;left:14px}.paper-card:after{bottom:10px;right:14px}
 .family{font-size:25px;color:var(--rose);margin-top:13px}
-/* Interactive wedding-date scratch card */
-.scratch-section{padding-top:42px;padding-bottom:58px}
-.scratch-wrap{max-width:590px;margin:0 auto;position:relative}
-.scratch-card{position:relative;min-height:252px;padding:26px 18px 24px;overflow:hidden;border:1px solid #c7a15d;background:radial-gradient(circle at 50% 45%,#fffef9,#ffeaf0 76%);box-shadow:0 16px 38px #a6536525;isolation:isolate}
-.scratch-card:before{content:"";position:absolute;inset:8px;border:1px dashed #c7a15d;pointer-events:none}
-.scratch-card:after{content:"✿";position:absolute;left:15px;top:8px;color:#bd8b91;font-size:25px}
-.scratch-under{position:relative;z-index:1;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px}
-.scratch-under .date-kicker{font:600 12px 'Cormorant Garamond',serif;letter-spacing:3px;color:#9b705c}
-.scratch-under .big-date{font:400 clamp(33px,8vw,49px) 'Yatra One','Tiro Devanagari Hindi',serif;color:#8f2b4a;margin:10px 0 3px}
-.scratch-under .weekday{font-size:18px;color:#a27739}
-.scratch-under .event-line{font-size:14px;line-height:1.8;color:#71534e;margin-top:10px}
-.scratch-canvas{position:absolute;z-index:3;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity .9s ease}
-.scratch-card.revealed .scratch-canvas{opacity:0;pointer-events:none}
-.scratch-card.revealed{animation:cardCelebrate .85s ease}
-.scratch-hint{font-size:13px;color:#946f61;margin:14px 0 0;text-align:center}
-.scratch-action{margin-top:13px;border:1px solid #d9bd82;background:linear-gradient(135deg,#9e2b4c,#6c1e37);color:#fff8ed;padding:10px 20px;cursor:pointer;box-shadow:0 7px 18px #70203922}
-.scratch-action:hover{transform:translateY(-2px)}
-@keyframes cardCelebrate{0%{transform:scale(1)}35%{transform:scale(1.025) rotate(-.4deg)}70%{transform:scale(1.01) rotate(.3deg)}100%{transform:scale(1)}}
-.burst-piece{position:fixed;z-index:60;left:0;top:0;pointer-events:none;font-size:18px;animation:burstFly 1.35s cubic-bezier(.14,.72,.25,1) forwards}
-@keyframes burstFly{0%{transform:translate(0,0) scale(.5) rotate(0);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(1.15) rotate(var(--rot));opacity:0}}
-@media(max-width:600px){.scratch-card{min-height:230px}.scratch-under{min-height:180px}.scratch-section{padding-top:30px;padding-bottom:38px}}
-
 .events{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:760px;margin:auto}
 .event{background:linear-gradient(145deg,#fffdf8,#fff0f2);border:1px solid #d6b77e;box-shadow:0 7px 20px #a6536515;padding:18px 14px;position:relative;text-align:center;transition:transform .35s,box-shadow .35s}
 .event:hover{transform:translateY(-4px);box-shadow:0 13px 24px #a6536524}.event .symbol{color:#b68e4c;font-size:23px}.event time{display:block;color:#9b6f58;font:600 13px 'Cormorant Garamond',serif;letter-spacing:1.2px;margin:5px 0}.event h3{font-size:18px;line-height:1.6;color:#85334c;font-weight:400;margin:4px 0}.event p{font-size:13px;line-height:1.8;color:#745b54;margin:0}
@@ -72,49 +48,12 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
 .petal{position:fixed;top:-28px;z-index:9;pointer-events:none;color:#b77b85;text-shadow:0 2px 3px #fff;animation:fall linear forwards}
 @keyframes fall{to{transform:translate3d(45px,110vh,0) rotate(460deg);opacity:0}}
 .music-btn{position:fixed;right:14px;bottom:14px;z-index:12;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold2);background:#852642;color:#fff4e8;font-size:20px;box-shadow:0 5px 16px #70203944}
-/* Extra cinematic details and interactive touches */
-#pageProgress{position:fixed;top:0;left:0;width:0;height:4px;z-index:100;background:linear-gradient(90deg,#c5a05a,#a52b4e,#e8c58d);box-shadow:0 0 12px #c5a05a88}
-.floating-nav{position:sticky;top:8px;z-index:15;display:flex;justify-content:center;gap:7px;flex-wrap:wrap;width:max-content;max-width:96%;margin:0 auto 10px;padding:7px;background:#fffaf0d9;border:1px solid #d9bd82;border-radius:40px;box-shadow:0 8px 24px #7b354218;backdrop-filter:blur(10px)}
-.floating-nav a{font-size:12px;padding:7px 13px;border-radius:30px;color:#794052;transition:background .25s,color .25s}
-.floating-nav a:hover,.floating-nav a:focus{background:#8e2949;color:#fff8ef;outline:none}
-.countdown-panel{max-width:700px;margin:0 auto 15px;padding:22px 16px 20px;background:linear-gradient(135deg,#fffaf7,#f8e1e7);border:1px solid #d0ad70;box-shadow:0 12px 34px #a653651b;text-align:center;position:relative;overflow:hidden}
-.countdown-panel:before,.countdown-panel:after{content:"✿";position:absolute;color:#c99c6b;font-size:44px;opacity:.45;animation:slowBloom 6s ease-in-out infinite alternate}
-.countdown-panel:before{left:12px;top:8px}.countdown-panel:after{right:12px;bottom:4px;animation-delay:1.5s}
-.countdown-panel h2{font:400 23px 'Yatra One','Tiro Devanagari Hindi',serif;color:#842b49;margin:4px 0 15px}
-.countdown-grid{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
-.countdown-grid .unit{min-width:68px;padding:10px 9px;background:#fffaf4;border:1px solid #d6b77e;border-radius:3px;box-shadow:inset 0 0 0 3px #c8a15c12}
-.countdown-grid b{display:block;font:600 29px 'Cormorant Garamond',serif;color:#8f2b4a;line-height:1.1}
-.countdown-grid small{font-size:11px;color:#886c59}
-.date-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:17px;position:relative;z-index:1}
-.date-actions button,.date-actions a{border:1px solid #d2ae70;background:#8e2949;color:#fff7ed;padding:10px 15px;font-size:13px;cursor:pointer;box-shadow:0 5px 14px #70203921}
-.date-actions .soft{background:#fffaf4;color:#83334c}
-.flower-button{display:inline-flex;align-items:center;gap:7px;border:1px solid #d6b77e;background:linear-gradient(135deg,#fffaf4,#f8e4e9);color:#8e2949;padding:10px 17px;cursor:pointer;box-shadow:0 6px 18px #70203914;transition:transform .25s}
-.flower-button:hover{transform:translateY(-3px)}
-.heart-divider{font-size:17px;letter-spacing:10px;color:#bd8b91;margin:20px auto}
-.bloom-flower{position:fixed;z-index:70;pointer-events:none;font-size:22px;animation:bloomFly 1.8s ease-out forwards;filter:drop-shadow(0 3px 4px #b76b8266)}
-@keyframes bloomFly{0%{transform:translate(0,0) scale(.3) rotate(0);opacity:0}15%{opacity:1}100%{transform:translate(var(--bx),var(--by)) scale(1.1) rotate(var(--br));opacity:0}}
-@keyframes slowBloom{from{transform:rotate(-12deg) scale(.8)}to{transform:rotate(18deg) scale(1.14)}}
-.music-btn.playing{animation:musicGlow 1.7s ease-in-out infinite}
-@keyframes musicGlow{50%{box-shadow:0 0 0 7px #a52b4e19,0 0 20px #c5a05a99;transform:scale(1.06)}}
-.hero video{filter:saturate(1.08) contrast(1.02)}
-.hero-frame{outline:1px solid #fff4d866;outline-offset:5px;animation:frameGlow 5s ease-in-out infinite}
-@keyframes frameGlow{50%{box-shadow:0 0 24px #fff4cf99,inset 0 0 14px #fff4cf66}}
-.section-head .eyebrow{display:inline-block;padding:5px 13px;border-top:1px solid #d2b177;border-bottom:1px solid #d2b177}
-.event{overflow:hidden}.event:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,#fff8 48%,transparent 70%);transform:translateX(-130%);transition:transform .9s}
-.event:hover:after{transform:translateX(130%)}
-@media(max-width:600px){.floating-nav{gap:2px;padding:5px}.floating-nav a{padding:6px 9px;font-size:11px}.countdown-panel{padding:20px 9px}.countdown-grid{gap:6px}.countdown-grid .unit{min-width:59px;padding:9px 6px}.countdown-grid b{font-size:25px}.date-actions button,.date-actions a{padding:9px 11px;font-size:12px}}
-@media(prefers-reduced-motion:reduce){.hero-frame,.countdown-panel:before,.countdown-panel:after,.event:after,.music-btn.playing{animation:none!important;transition:none!important}}
-
 @media(max-width:600px){.wrap{padding:8px 10px 40px}.hero{width:100%;max-height:calc(100svh - 20px);border-width:6px}.hero-copy{top:5.5%}.hero-title{font-size:30px}.hero-names{font-size:39px}.section{padding:36px 3px 42px}.paper-card{padding:23px 16px}.events{grid-template-columns:1fr;gap:11px}.event{padding:15px 12px}.section h2{font-size:25px}.lead{font-size:15px}.garland{font-size:22px;height:43px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<div id="pageProgress"></div>
 <div class="wrap">
-<nav class="floating-nav" aria-label="मुख्य नेविगेशन">
-  <a href="#date">शुभ दिन</a><a href="#invite">निमंत्रण</a><a href="#events">कार्यक्रम</a><a href="#venue">स्थान</a>
-</nav>
 <div class="garland" aria-hidden="true"><span>🌿 ✿ ❀ ✿ 🌿 ✧ 🌿 ✿ ❀ ✿ 🌿</span></div>
 <header class="hero-shell">
   <div class="hero">
@@ -124,7 +63,7 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
       <div class="ganesh">॥ श्री गणेशाय नमः ॥</div>
       <div class="hero-kicker">A WEDDING CELEBRATION</div>
       <h1 class="hero-title display">मांगलिक परिणयोत्सव</h1>
-      <div class="hero-names display">दीपाली <span class="heart">♥</span><br>शैलेन्द्र</div>
+      <div class="hero-names display">शैलेन्द्र <span class="heart">♥</span><br>दीपाली</div>
       <p class="hero-note">शाक्या परिवार के स्नेहिल आमंत्रण पर<br>आप सपरिवार सादर आमंत्रित हैं।</p>
       <div class="hero-date">THURSDAY · 26 NOVEMBER 2026</div>
       <div class="hero-hindi-date">गुरुवार · २६ नवम्बर २०२६</div>
@@ -134,48 +73,17 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
         <div class="namaste">॥ श्री गणेशाय नमः ॥</div>
         <div class="eyebrow">WITH LOVE & BLESSINGS</div>
         <h1 class="display">शुभ विवाह</h1>
-        <p>दीपाली एवं शैलेन्द्र के मंगल परिणय में<br>आपका हार्दिक स्वागत है।</p>
+        <p>शैलेन्द्र एवं दीपाली के मंगल परिणय में<br>आपका हार्दिक स्वागत है।</p>
         <button class="enter" id="enter">संगीत सहित आमंत्रण खोलें ✿</button>
       </div>
     </div>
   </div>
 </header>
-<section class="section reveal" id="date">
-  <div class="countdown-panel">
-    <div class="eyebrow">COUNTING THE MOMENTS</div>
-    <h2>शुभ घड़ी आने में शेष</h2>
-    <div class="countdown-grid" id="liveCountdown">
-      <div class="unit"><b>--</b><small>दिन</small></div><div class="unit"><b>--</b><small>घंटे</small></div><div class="unit"><b>--</b><small>मिनट</small></div><div class="unit"><b>--</b><small>सेकंड</small></div>
-    </div>
-    <div class="date-actions">
-      <button type="button" id="saveDate">कैलेंडर में तारीख जोड़ें ♡</button>
-      <button type="button" class="soft" id="shareInvite">निमंत्रण साझा करें ↗</button>
-    </div>
-  </div>
-  <div class="heart-divider">♡ ✦ ♡ ✦ ♡</div>
-  <button class="flower-button" id="flowerBurst" type="button">हमारी ओर से फूलों की वर्षा ✿</button>
-</section>
-<section class="section scratch-section reveal" id="scratch" aria-label="Wedding date scratch card">
-  <div class="section-head"><div class="eyebrow">A LITTLE SURPRISE FOR YOU</div><h2 class="display">शुभ दिन जानने के लिए खुरचें</h2><div class="ornament">✿ ✧ ✿</div></div>
-  <div class="scratch-wrap">
-    <div class="scratch-card" id="scratchCard">
-      <div class="scratch-under">
-        <div class="date-kicker">THE DAY TWO HEARTS BECOME ONE</div>
-        <div class="big-date">२६ नवम्बर २०२६</div>
-        <div class="weekday display">गुरुवार</div>
-        <div class="event-line">बारात आगमन एवं पाणिग्रहण संस्कार<br>आपके स्नेह और आशीर्वाद की प्रतीक्षा में ❤️</div>
-      </div>
-      <canvas class="scratch-canvas" id="scratchCanvas" aria-label="Scratch this card to reveal the wedding date"></canvas>
-    </div>
-    <p class="scratch-hint" id="scratchHint">✨ उंगली या माउस से कार्ड को खुरचकर शादी की तारीख देखें ✨</p>
-    <button class="scratch-action" id="revealDate" type="button">तारीख दिखाएँ ♡</button>
-  </div>
-</section>
-<section class="section reveal" id="invite">
+<section class="section reveal">
   <div class="section-head"><div class="eyebrow">A HEARTFELT INVITATION</div><h2 class="display">सप्रेम निमंत्रण</h2><div class="ornament">✿ ❧ ✿</div></div>
-  <div class="paper-card"><p class="lead">परमात्मा की असीम कृपा एवं बड़ों के शुभाशीष से हमारे परिवार में शुभ विवाह का मंगल अवसर आया है। इस पावन बेला में आपकी गरिमामयी उपस्थिति हमारे लिए हर्ष एवं सौभाग्य का विषय होगी।<br><br>कृपया पधारकर वर-वधू को अपना स्नेह एवं आशीर्वाद प्रदान करें।</p><div class="family display">शाक्या परिवार</div></div>
+  <div class="paper-card"><p class="lead">परमात्मा की असीम कृपा एवं बड़ों के शुभाशीष से हमारे परिवार में शुभ विवाह का मंगल अवसर आया है। इस पावन बेला में आपकी गरिमामयी उपस्थिति हमारे लिए हर्ष एवं सौभाग्य का विषय होगी।<br><br>कृपया पधारकर वर-वधू को अपना स्नेह एवं आशीर्वाद प्रदान करें।</p><div class="family display">शक्य परिवार</div></div>
 </section>
-<section class="section reveal" id="events">
+<section class="section reveal">
   <div class="section-head"><div class="eyebrow">WEDDING FESTIVITIES</div><h2 class="display">शुभ कार्यक्रम</h2><div class="ornament">❀ ✧ ❀</div></div>
   <div class="events">
     <article class="event"><div class="symbol">🪔</div><time>24 NOVEMBER 2026 · मंगलवार</time><h3 class="display">श्री गणेश पूजन</h3><p>माता पूजन एवं तेलवा<br>समय : शाम 4 बजे से</p></article>
@@ -184,94 +92,15 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
     <article class="event"><div class="symbol">🌺</div><time>26 NOVEMBER 2026 · गुरुवार</time><h3 class="display">आशीर्वाद समारोह एवं प्रीतिभोज</h3><p>दोपहर 1 बजे से आपके आगमन तक</p></article>
   </div>
 </section>
-<section class="section reveal" id="venue">
+<section class="section reveal">
   <div class="section-head"><div class="eyebrow">THE WEDDING VENUE</div><h2 class="display">आपका स्वागत है</h2><div class="ornament">✿ ❧ ✿</div></div>
   <div class="venue"><div class="venue-inner"><div class="eyebrow">CELEBRATE WITH US</div><h3 class="display">शुभ विवाह स्थल</h3><div class="place display">निजात विलास</div><p>कैंटोनमेंट रोड, गणपति कॉलोनी,<br>गुड बाई पब्लिक हाई स्कूल के पास,<br>विदिशा (मध्य प्रदेश)</p><a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nijat+Vilas+Cantonment+Road+Ganpati+Colony+Vidisha">Google Maps पर रास्ता देखें ↗</a></div></div>
 </section>
-<footer class="closing reveal"><div class="eyebrow">WITH WARM REGARDS</div><div class="couple display">दीपाली ♥ शैलेन्द्र</div><div class="ornament">❀ ✧ ❀</div><p>आपका स्नेह और आशीर्वाद ही हमारी खुशियों को पूर्ण करेगा।<br>शाक्या परिवार</p></footer>
+<footer class="closing reveal"><div class="eyebrow">WITH WARM REGARDS</div><div class="couple display">शैलेन्द्र ♥ दीपाली</div><div class="ornament">❀ ✧ ❀</div><p>आपका स्नेह और आशीर्वाद ही हमारी खुशियों को पूर्ण करेगा।<br>शक्य परिवार</p></footer>
 </div>
 <button class="music-btn" id="musicBtn" aria-label="संगीत रोकें या चलाएँ">♫</button>
 <audio id="bgMusic" src="ReelAudio.mp3" preload="auto" loop></audio>
 <script>
-
-/* Scratch-card reveal + celebratory flower burst */
-(()=>{
- const card=document.getElementById('scratchCard');
- const canvas=document.getElementById('scratchCanvas');
- const hint=document.getElementById('scratchHint');
- const revealBtn=document.getElementById('revealDate');
- if(!card||!canvas)return;
- const ctx=canvas.getContext('2d',{willReadFrequently:true});
- let drawing=false,revealed=false,lastCheck=0,checkQueued=false;
- function paintCover(){
-   const rect=card.getBoundingClientRect();if(!rect.width||!rect.height)return;
-   const dpr=Math.min(window.devicePixelRatio||1,2);
-   canvas.width=Math.round(rect.width*dpr);canvas.height=Math.round(rect.height*dpr);
-   ctx.setTransform(dpr,0,0,dpr,0,0);
-   const w=rect.width,h=rect.height;
-   const g=ctx.createLinearGradient(0,0,w,h);g.addColorStop(0,'#d6aeb8');g.addColorStop(.48,'#bd8796');g.addColorStop(1,'#e6c9b8');
-   ctx.globalCompositeOperation='source-over';ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
-   ctx.strokeStyle='rgba(255,247,230,.53)';ctx.lineWidth=1;
-   for(let x=-h;x<w+h;x+=23){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x+h,h);ctx.stroke();}
-   ctx.strokeStyle='rgba(249,230,190,.85)';ctx.lineWidth=1.2;ctx.strokeRect(13,13,w-26,h-26);
-   ctx.fillStyle='#fff8ec';ctx.textAlign='center';ctx.textBaseline='middle';
-   ctx.font='26px Georgia';ctx.fillText('✧  ✿  ✧',w/2,h*.34);
-   ctx.font='600 17px Georgia';ctx.letterSpacing='2px';ctx.fillText('SCRATCH TO REVEAL',w/2,h*.52);
-   ctx.font='13px Georgia';ctx.letterSpacing='1px';ctx.fillText('A SPECIAL DAY AWAITS YOU',w/2,h*.64);
-   ctx.font='22px Georgia';ctx.fillText('♡',w/2,h*.82);
-   ctx.globalCompositeOperation='destination-out';
- }
- function point(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};}
- function scratch(e){const p=point(e);ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(p.x,p.y,25,0,Math.PI*2);ctx.fill();if(lastCheck===0||Date.now()-lastCheck>180){lastCheck=Date.now();if(!checkQueued){checkQueued=true;requestAnimationFrame(()=>{checkQueued=false;checkProgress();});}}}
- function checkProgress(){
-   if(revealed)return;
-   const w=canvas.width,h=canvas.height;try{
-     const pixels=ctx.getImageData(0,0,w,h).data;let clear=0,total=0;
-     const step=22;
-     for(let y=0;y<h;y+=step)for(let x=0;x<w;x+=step){if(pixels[(y*w+x)*4+3]<80)clear++;total++;}
-     if(clear/total>.32)showDate();
-   }catch(e){}
- }
- function showDate(){
-   if(revealed)return;revealed=true;card.classList.add('revealed');hint.textContent='💗 शुभ विवाह की तारीख आपके सामने है!';
-   revealBtn.textContent='तारीख खुल गई ♥';revealBtn.disabled=true;confetti();
- }
- function confetti(){
-   const r=card.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
-   const pieces=['✿','❀','✧','♥','✦'];const colors=['#b52f54','#c7a15d','#6f8a62','#e3a9b9'];
-   for(let i=0;i<34;i++){const el=document.createElement('span');el.className='burst-piece';el.textContent=pieces[i%pieces.length];el.style.left=cx+'px';el.style.top=cy+'px';el.style.color=colors[i%colors.length];const angle=Math.PI*2*i/34+(Math.random()-.5)*.25;const distance=80+Math.random()*150;el.style.setProperty('--dx',Math.cos(angle)*distance+'px');el.style.setProperty('--dy',Math.sin(angle)*distance+'px');el.style.setProperty('--rot',(Math.random()*600-300)+'deg');document.body.appendChild(el);setTimeout(()=>el.remove(),1500);}
- }
- canvas.addEventListener('pointerdown',e=>{if(revealed)return;drawing=true;canvas.setPointerCapture(e.pointerId);scratch(e);});
- canvas.addEventListener('pointermove',e=>{if(!drawing||revealed)return;scratch(e);});
- const end=()=>{drawing=false;checkProgress();};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);canvas.addEventListener('lostpointercapture',end);
- revealBtn.addEventListener('click',showDate);
- if('ResizeObserver'in window){const ro=new ResizeObserver(()=>{if(!revealed)paintCover();});ro.observe(card);}else window.addEventListener('resize',()=>{if(!revealed)paintCover();});
- paintCover();
-})();
-
-
-/* Countdown, calendar export, share action and flower shower */
-(()=>{
- const weddingAt=new Date('2026-11-26T13:00:00+05:30').getTime();
- const nodes=[...document.querySelectorAll('#liveCountdown b')];
- function updateCountdown(){const ms=Math.max(0,weddingAt-Date.now());const v=[Math.floor(ms/86400000),Math.floor(ms/3600000)%24,Math.floor(ms/60000)%60,Math.floor(ms/1000)%60];nodes.forEach((n,i)=>n.textContent=String(v[i]).padStart(2,'0'));}
- updateCountdown();setInterval(updateCountdown,1000);
- document.getElementById('saveDate')?.addEventListener('click',()=>{
-   const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Shakya Family//Wedding Invitation//EN','BEGIN:VEVENT','UID:deepali-shailendra-20261126@shailendra-wedding','DTSTAMP:20261117T000000Z','DTSTART;VALUE=DATE:20261126','DTEND;VALUE=DATE:20261127','SUMMARY:दीपाली ♥ शैलेन्द्र - शुभ विवाह','LOCATION:निजात विलास\, कैंटोनमेंट रोड\, गणपति कॉलोनी\, विदिशा','DESCRIPTION:शाक्या परिवार के स्नेहिल आमंत्रण पर सादर आमंत्रित हैं।','END:VEVENT','END:VCALENDAR'].join('\r\n');
-   const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Deepali-Shailendra-Wedding.ics';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
- });
- document.getElementById('shareInvite')?.addEventListener('click',async()=>{
-   const data={title:'दीपाली ♥ शैलेन्द्र | शुभ विवाह',text:'शाक्या परिवार की ओर से सादर आमंत्रण। 26 नवम्बर 2026, विदिशा।',url:location.href};
-   try{if(navigator.share)await navigator.share(data);else if(navigator.clipboard){await navigator.clipboard.writeText(location.href);alert('निमंत्रण लिंक कॉपी हो गया है।');}else{prompt('निमंत्रण लिंक कॉपी करें:',location.href);}}catch(e){}
- });
- document.getElementById('flowerBurst')?.addEventListener('click',()=>{
-   const symbols=['🌸','🌺','🌷','✿','❀','💗','✧'];const colors=['#b52f54','#bd8b91','#c7a15d','#6f8a62'];
-   const cx=innerWidth/2,cy=innerHeight*.48;
-   for(let i=0;i<48;i++){const el=document.createElement('span');el.className='bloom-flower';el.textContent=symbols[i%symbols.length];el.style.left=cx+'px';el.style.top=cy+'px';el.style.color=colors[i%colors.length];const a=Math.PI*2*i/48,dist=100+Math.random()*220;el.style.setProperty('--bx',Math.cos(a)*dist+'px');el.style.setProperty('--by',Math.sin(a)*dist+'px');el.style.setProperty('--br',(Math.random()*320-160)+'deg');document.body.appendChild(el);setTimeout(()=>el.remove(),1900);}
- });
- const progress=document.getElementById('pageProgress');addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';},{passive:true});
-})();
-
 const video=document.getElementById('weddingVideo');
 const audio=document.getElementById('bgMusic');
 const gate=document.getElementById('gate');
