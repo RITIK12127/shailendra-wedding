@@ -38,6 +38,28 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
 .paper-card{max-width:710px;margin:auto;padding:27px 22px;background:linear-gradient(145deg,#fffdf9,#fff4f4);border:1px solid #d6b77e;outline:1px solid #d6b77e55;outline-offset:-7px;box-shadow:0 12px 30px #a6536520;position:relative}
 .paper-card:before,.paper-card:after{content:"✿";position:absolute;color:#b57e7b;font-size:19px}.paper-card:before{top:10px;left:14px}.paper-card:after{bottom:10px;right:14px}
 .family{font-size:25px;color:var(--rose);margin-top:13px}
+/* Interactive wedding-date scratch card */
+.scratch-section{padding-top:42px;padding-bottom:58px}
+.scratch-wrap{max-width:590px;margin:0 auto;position:relative}
+.scratch-card{position:relative;min-height:252px;padding:26px 18px 24px;overflow:hidden;border:1px solid #c7a15d;background:radial-gradient(circle at 50% 45%,#fffef9,#ffeaf0 76%);box-shadow:0 16px 38px #a6536525;isolation:isolate}
+.scratch-card:before{content:"";position:absolute;inset:8px;border:1px dashed #c7a15d;pointer-events:none}
+.scratch-card:after{content:"✿";position:absolute;left:15px;top:8px;color:#bd8b91;font-size:25px}
+.scratch-under{position:relative;z-index:1;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px}
+.scratch-under .date-kicker{font:600 12px 'Cormorant Garamond',serif;letter-spacing:3px;color:#9b705c}
+.scratch-under .big-date{font:400 clamp(33px,8vw,49px) 'Yatra One','Tiro Devanagari Hindi',serif;color:#8f2b4a;margin:10px 0 3px}
+.scratch-under .weekday{font-size:18px;color:#a27739}
+.scratch-under .event-line{font-size:14px;line-height:1.8;color:#71534e;margin-top:10px}
+.scratch-canvas{position:absolute;z-index:3;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity .9s ease}
+.scratch-card.revealed .scratch-canvas{opacity:0;pointer-events:none}
+.scratch-card.revealed{animation:cardCelebrate .85s ease}
+.scratch-hint{font-size:13px;color:#946f61;margin:14px 0 0;text-align:center}
+.scratch-action{margin-top:13px;border:1px solid #d9bd82;background:linear-gradient(135deg,#9e2b4c,#6c1e37);color:#fff8ed;padding:10px 20px;cursor:pointer;box-shadow:0 7px 18px #70203922}
+.scratch-action:hover{transform:translateY(-2px)}
+@keyframes cardCelebrate{0%{transform:scale(1)}35%{transform:scale(1.025) rotate(-.4deg)}70%{transform:scale(1.01) rotate(.3deg)}100%{transform:scale(1)}}
+.burst-piece{position:fixed;z-index:60;left:0;top:0;pointer-events:none;font-size:18px;animation:burstFly 1.35s cubic-bezier(.14,.72,.25,1) forwards}
+@keyframes burstFly{0%{transform:translate(0,0) scale(.5) rotate(0);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(1.15) rotate(var(--rot));opacity:0}}
+@media(max-width:600px){.scratch-card{min-height:230px}.scratch-under{min-height:180px}.scratch-section{padding-top:30px;padding-bottom:38px}}
+
 .events{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:760px;margin:auto}
 .event{background:linear-gradient(145deg,#fffdf8,#fff0f2);border:1px solid #d6b77e;box-shadow:0 7px 20px #a6536515;padding:18px 14px;position:relative;text-align:center;transition:transform .35s,box-shadow .35s}
 .event:hover{transform:translateY(-4px);box-shadow:0 13px 24px #a6536524}.event .symbol{color:#b68e4c;font-size:23px}.event time{display:block;color:#9b6f58;font:600 13px 'Cormorant Garamond',serif;letter-spacing:1.2px;margin:5px 0}.event h3{font-size:18px;line-height:1.6;color:#85334c;font-weight:400;margin:4px 0}.event p{font-size:13px;line-height:1.8;color:#745b54;margin:0}
@@ -79,6 +101,22 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
     </div>
   </div>
 </header>
+<section class="section scratch-section reveal" aria-label="Wedding date scratch card">
+  <div class="section-head"><div class="eyebrow">A LITTLE SURPRISE FOR YOU</div><h2 class="display">शुभ दिन जानने के लिए खुरचें</h2><div class="ornament">✿ ✧ ✿</div></div>
+  <div class="scratch-wrap">
+    <div class="scratch-card" id="scratchCard">
+      <div class="scratch-under">
+        <div class="date-kicker">THE DAY TWO HEARTS BECOME ONE</div>
+        <div class="big-date">२६ नवम्बर २०२६</div>
+        <div class="weekday display">गुरुवार</div>
+        <div class="event-line">बारात आगमन एवं पाणिग्रहण संस्कार<br>आपके स्नेह और आशीर्वाद की प्रतीक्षा में ❤️</div>
+      </div>
+      <canvas class="scratch-canvas" id="scratchCanvas" aria-label="Scratch this card to reveal the wedding date"></canvas>
+    </div>
+    <p class="scratch-hint" id="scratchHint">✨ उंगली या माउस से कार्ड को खुरचकर शादी की तारीख देखें ✨</p>
+    <button class="scratch-action" id="revealDate" type="button">तारीख दिखाएँ ♡</button>
+  </div>
+</section>
 <section class="section reveal">
   <div class="section-head"><div class="eyebrow">A HEARTFELT INVITATION</div><h2 class="display">सप्रेम निमंत्रण</h2><div class="ornament">✿ ❧ ✿</div></div>
   <div class="paper-card"><p class="lead">परमात्मा की असीम कृपा एवं बड़ों के शुभाशीष से हमारे परिवार में शुभ विवाह का मंगल अवसर आया है। इस पावन बेला में आपकी गरिमामयी उपस्थिति हमारे लिए हर्ष एवं सौभाग्य का विषय होगी।<br><br>कृपया पधारकर वर-वधू को अपना स्नेह एवं आशीर्वाद प्रदान करें।</p><div class="family display">शक्य परिवार</div></div>
@@ -101,6 +139,62 @@ a{color:inherit;text-decoration:none}button{font:inherit}.serif{font-family:'Cor
 <button class="music-btn" id="musicBtn" aria-label="संगीत रोकें या चलाएँ">♫</button>
 <audio id="bgMusic" src="ReelAudio.mp3" preload="auto" loop></audio>
 <script>
+
+/* Scratch-card reveal + celebratory flower burst */
+(()=>{
+ const card=document.getElementById('scratchCard');
+ const canvas=document.getElementById('scratchCanvas');
+ const hint=document.getElementById('scratchHint');
+ const revealBtn=document.getElementById('revealDate');
+ if(!card||!canvas)return;
+ const ctx=canvas.getContext('2d',{willReadFrequently:true});
+ let drawing=false,revealed=false,lastCheck=0,checkQueued=false;
+ function paintCover(){
+   const rect=card.getBoundingClientRect();if(!rect.width||!rect.height)return;
+   const dpr=Math.min(window.devicePixelRatio||1,2);
+   canvas.width=Math.round(rect.width*dpr);canvas.height=Math.round(rect.height*dpr);
+   ctx.setTransform(dpr,0,0,dpr,0,0);
+   const w=rect.width,h=rect.height;
+   const g=ctx.createLinearGradient(0,0,w,h);g.addColorStop(0,'#d6aeb8');g.addColorStop(.48,'#bd8796');g.addColorStop(1,'#e6c9b8');
+   ctx.globalCompositeOperation='source-over';ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
+   ctx.strokeStyle='rgba(255,247,230,.53)';ctx.lineWidth=1;
+   for(let x=-h;x<w+h;x+=23){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x+h,h);ctx.stroke();}
+   ctx.strokeStyle='rgba(249,230,190,.85)';ctx.lineWidth=1.2;ctx.strokeRect(13,13,w-26,h-26);
+   ctx.fillStyle='#fff8ec';ctx.textAlign='center';ctx.textBaseline='middle';
+   ctx.font='26px Georgia';ctx.fillText('✧  ✿  ✧',w/2,h*.34);
+   ctx.font='600 17px Georgia';ctx.letterSpacing='2px';ctx.fillText('SCRATCH TO REVEAL',w/2,h*.52);
+   ctx.font='13px Georgia';ctx.letterSpacing='1px';ctx.fillText('A SPECIAL DAY AWAITS YOU',w/2,h*.64);
+   ctx.font='22px Georgia';ctx.fillText('♡',w/2,h*.82);
+   ctx.globalCompositeOperation='destination-out';
+ }
+ function point(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};}
+ function scratch(e){const p=point(e);ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(p.x,p.y,25,0,Math.PI*2);ctx.fill();if(lastCheck===0||Date.now()-lastCheck>180){lastCheck=Date.now();if(!checkQueued){checkQueued=true;requestAnimationFrame(()=>{checkQueued=false;checkProgress();});}}}
+ function checkProgress(){
+   if(revealed)return;
+   const w=canvas.width,h=canvas.height;try{
+     const pixels=ctx.getImageData(0,0,w,h).data;let clear=0,total=0;
+     const step=22;
+     for(let y=0;y<h;y+=step)for(let x=0;x<w;x+=step){if(pixels[(y*w+x)*4+3]<80)clear++;total++;}
+     if(clear/total>.32)showDate();
+   }catch(e){}
+ }
+ function showDate(){
+   if(revealed)return;revealed=true;card.classList.add('revealed');hint.textContent='💗 शुभ विवाह की तारीख आपके सामने है!';
+   revealBtn.textContent='तारीख खुल गई ♥';revealBtn.disabled=true;confetti();
+ }
+ function confetti(){
+   const r=card.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+   const pieces=['✿','❀','✧','♥','✦'];const colors=['#b52f54','#c7a15d','#6f8a62','#e3a9b9'];
+   for(let i=0;i<34;i++){const el=document.createElement('span');el.className='burst-piece';el.textContent=pieces[i%pieces.length];el.style.left=cx+'px';el.style.top=cy+'px';el.style.color=colors[i%colors.length];const angle=Math.PI*2*i/34+(Math.random()-.5)*.25;const distance=80+Math.random()*150;el.style.setProperty('--dx',Math.cos(angle)*distance+'px');el.style.setProperty('--dy',Math.sin(angle)*distance+'px');el.style.setProperty('--rot',(Math.random()*600-300)+'deg');document.body.appendChild(el);setTimeout(()=>el.remove(),1500);}
+ }
+ canvas.addEventListener('pointerdown',e=>{if(revealed)return;drawing=true;canvas.setPointerCapture(e.pointerId);scratch(e);});
+ canvas.addEventListener('pointermove',e=>{if(!drawing||revealed)return;scratch(e);});
+ const end=()=>{drawing=false;checkProgress();};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);canvas.addEventListener('lostpointercapture',end);
+ revealBtn.addEventListener('click',showDate);
+ if('ResizeObserver'in window){const ro=new ResizeObserver(()=>{if(!revealed)paintCover();});ro.observe(card);}else window.addEventListener('resize',()=>{if(!revealed)paintCover();});
+ paintCover();
+})();
+
 const video=document.getElementById('weddingVideo');
 const audio=document.getElementById('bgMusic');
 const gate=document.getElementById('gate');
